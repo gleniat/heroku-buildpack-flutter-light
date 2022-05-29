@@ -5,7 +5,9 @@
 shopt -s dotglob extglob
 
 # Stop execution affter encountering a problem
+# Pipefail is also needed so commands with " | indent" formatting can fail too
 set -e
+set -o pipefail
 unset GIT_DIR
 
 function print() {
